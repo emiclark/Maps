@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Maps" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-44-IeL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-62-VyH">
+                                <rect key="frame" x="16" y="20" width="165" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="EJb-Fg-Czz"/>
+                                    <constraint firstAttribute="height" constant="45" id="oHJ-M1-BKy"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o9H-lU-aP0">
+                                <rect key="frame" x="60" y="604" width="254" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapDetail:" destination="BYZ-38-t0r" eventType="valueChanged" id="1yh-wv-YcG"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C9O-44-IeL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Epn-iq-KDS"/>
+                            <constraint firstAttribute="trailing" secondItem="C9O-44-IeL" secondAttribute="trailing" id="LdB-2h-dTJ"/>
+                            <constraint firstItem="C9O-44-IeL" firstAttribute="centerX" secondItem="o9H-lU-aP0" secondAttribute="centerX" id="TPC-rA-qiY"/>
+                            <constraint firstItem="Nld-62-VyH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="f7B-Rg-n7B"/>
+                            <constraint firstItem="C9O-44-IeL" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ihv-FX-bdz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o9H-lU-aP0" secondAttribute="bottom" constant="35" id="pYU-R0-8Mv"/>
+                            <constraint firstItem="Nld-62-VyH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rET-Hs-2xD"/>
+                            <constraint firstItem="C9O-44-IeL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="twt-QH-Vw7"/>
+                            <constraint firstItem="o9H-lU-aP0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="vtE-kV-r7h"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="C9O-44-IeL" id="c6b-Ad-3Fg"/>
+                        <outlet property="selectedMapType" destination="o9H-lU-aP0" id="3R8-wt-5wy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo.png" width="277" height="49"/>
+    </resources>
+</document>
